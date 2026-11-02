@@ -20,6 +20,12 @@ app.use(cors({
   credentials: true
 }));
 app.use(express.json({ limit: '1mb' }));
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Shoupex Backend is running!'
+  });
+});
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/api/auth', require('./routes/auth'));
@@ -58,7 +64,7 @@ async function seed() {
       password: await bcrypt.hash(process.env.ADMIN_PASSWORD, 10),
       role: 'admin',
     });
-    console.log(`Admin created -> ${process.env.ADMIN_EMAIL} / ${process.env.ADMIN_PASSWORD}`);
+    console.log('Admin account created successfully');
   }
   if ((await Category.countDocuments()) === 0) {
     await Category.insertMany([
