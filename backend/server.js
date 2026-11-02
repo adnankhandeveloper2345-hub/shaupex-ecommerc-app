@@ -15,7 +15,10 @@ if (!process.env.JWT_SECRET) {
 fs.mkdirSync(path.join(__dirname, 'uploads'), { recursive: true });
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://shoupex.netlify.app",
+  credentials: true
+}));
 app.use(express.json({ limit: '1mb' }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
