@@ -58,8 +58,8 @@ code, .code { font-family: ui-monospace, Menlo, monospace; background: var(--bra
 .hsearch input:focus { outline: none; border: 0; }
 .hactions { display: flex; align-items: center; gap: .35rem; margin-left: auto; }
 .avatar { width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--brand); color: #fff; font: inherit; font-weight: 700; cursor: pointer; transition: transform .2s var(--ease); } .avatar:hover { transform: scale(1.08); }
-.usermenu { position: relative; }
-.dropdown { position: absolute; right: 0; top: calc(100% + 10px); min-width: 230px; padding: .5rem; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); animation: menuIn .2s var(--ease); }
+.usermenu { position: relative; z-index: 60; }
+.dropdown { position: absolute; z-index: 60; right: 0; top: calc(100% + 10px); min-width: 230px; padding: .5rem; background: #ffffff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 20px 50px rgba(15, 14, 23, .22); animation: menuIn .2s var(--ease); }
 @keyframes menuIn { from { opacity: 0; transform: translateY(-6px); } }
 .dd-head { display: grid; padding: .6rem .7rem; border-bottom: 1px solid var(--line); margin-bottom: .3rem; } .dd-head small { color: var(--muted); }
 .dropdown a, .dropdown button { display: flex; align-items: center; gap: .6rem; width: 100%; padding: .6rem .7rem; font: inherit; font-weight: 500; color: var(--ink); text-decoration: none; background: none; border: 0; border-radius: 9px; cursor: pointer; }
